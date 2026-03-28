@@ -4,161 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ETRAAM LUXURY | Essential Fragrances</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display+SC:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #b59410; --black: #0a0a0a; --white: #ffffff; --accent: #fcfaf5; }
+        :root { 
+            --gold: #c5a021; 
+            --gold-light: #f4e4a1; 
+            --black: #080808; 
+            --white: #ffffff; 
+            --glass: rgba(255, 255, 255, 0.92);
+        }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--white); color: var(--black); line-height: 1.6; scroll-behavior: smooth; }
         
-        /* Navigation Bar */
-        header { padding: 30px 20px; text-align: center; border-bottom: 1px solid #eee; position: sticky; top: 0; background: rgba(255,255,255,0.95); z-index: 1000; backdrop-filter: blur(5px); }
-        .logo { font-family: 'Playfair Display', serif; font-size: 35px; letter-spacing: 12px; text-transform: uppercase; font-weight: 700; color: #000; text-decoration: none; display: block; }
-        .tagline { font-size: 8px; letter-spacing: 5px; color: #999; text-transform: uppercase; margin-top: 5px; }
+        body { 
+            font-family: 'Lora', serif; 
+            background-color: #fdfdfd;
+            color: var(--black);
+            overflow-x: hidden;
+            /* Royal Background Texture */
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+                url('https://www.transparenttextures.com/patterns/pinstriped-suit.png');
+        }
 
-        nav { display: flex; justify-content: center; gap: 25px; padding: 15px 0; border-top: 1px solid #f9f9f9; }
-        nav a { text-decoration: none; color: #555; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; transition: 0.3s; }
-        nav a:hover { color: var(--gold); }
-
-        /* Hero Section */
-        .hero { padding: 100px 20px; text-align: center; background: var(--accent); border-bottom: 1px solid #f0f0f0; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 42px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; }
-        .hero p { color: #777; font-size: 14px; max-width: 500px; margin: 0 auto; letter-spacing: 1px; font-style: italic; }
-
-        /* Section Titles */
-        .section-header { text-align: center; padding: 80px 20px 30px; }
-        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 26px; text-transform: uppercase; letter-spacing: 7px; position: relative; display: inline-block; }
-        .section-header h2::after { content: ''; display: block; width: 50px; height: 1px; background: var(--gold); margin: 12px auto; }
-
-        /* Product Grid */
-        .container { max-width: 1200px; margin: auto; padding: 0 20px 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        /* --- Luxury Header --- */
+        header { 
+            padding: 50px 20px; 
+            text-align: center; 
+            background: var(--white); 
+            border-bottom: 2px solid var(--gold); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
         
-        /* Product Card */
-        .card { border: 1px solid #f2f2f2; padding: 20px; text-align: center; transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); background: #fff; position: relative; }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.06); border-color: var(--gold); }
-        .card img { width: 100%; height: 380px; object-fit: cover; margin-bottom: 20px; background: #fcfcfc; }
+        /* THE LOGO: ROYAL GOLD ETRAAM */
+        .logo { 
+            font-family: 'Cinzel', serif;
+            font-size: 55px; 
+            letter-spacing: 18px; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            text-decoration: none; 
+            /* Rich Gold Gradient */
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            filter: drop-shadow(0px 3px 2px rgba(0,0,0,0.15));
+            transition: 0.5s;
+        }
         
-        .card h3 { font-family: 'Playfair Display', serif; font-size: 20px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
-        .desc { font-size: 12px; color: #888; margin-bottom: 15px; min-height: 35px; letter-spacing: 0.5px; }
-        .price { font-size: 20px; font-weight: 600; display: block; margin-bottom: 20px; color: var(--black); font-family: 'Arial'; }
+        .logo:hover {
+            filter: drop-shadow(0px 0px 15px rgba(197, 160, 33, 0.4));
+            transform: scale(1.02);
+        }
 
-        /* Order Button */
-        .order-link { 
-            display: block;
-            background: var(--black); 
-            color: var(--white); 
-            text-decoration: none;
-            padding: 16px; 
+        .tagline { 
+            font-size: 10px; 
+            letter-spacing: 7px; 
+            color: #888; 
+            text-transform: uppercase; 
+            margin-top: 15px; 
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        /* --- Navigation --- */
+        nav { display: flex; justify-content: center; gap: 40px; padding: 25px 0 0; }
+        nav a { 
+            text-decoration: none; 
+            color: #333; 
+            font-size: 11px; 
             text-transform: uppercase; 
             letter-spacing: 3px; 
-            font-size: 11px; 
-            font-weight: 600;
-            transition: 0.3s ease;
-            text-align: center;
+            font-weight: 600; 
+            transition: 0.3s;
         }
-        .order-link:hover { background: var(--gold); }
+        nav a:hover { color: var(--gold); }
 
-        /* Luxury Product Special Look */
-        .luxury-card { border: 2px solid var(--gold) !important; background: #fffdf8; }
-        .luxury-label { background: var(--gold); color: white; padding: 6px 15px; font-size: 9px; position: absolute; top: 0; left: 0; text-transform: uppercase; letter-spacing: 2px; }
-
-        /* Footer & Swastik's Signature */
-        footer { text-align: center; padding: 80px 20px; background: #fafafa; border-top: 1px solid #eee; margin-top: 50px; }
-        .footer-logo { font-family: 'Playfair Display', serif; font-size: 24px; letter-spacing: 8px; margin-bottom: 15px; }
-        .curated-by { font-family: 'Playfair Display', serif; font-style: italic; font-size: 18px; color: var(--gold); margin-top: 20px; border-top: 1px solid #ddd; display: inline-block; padding-top: 15px; }
-        .location-info { font-size: 11px; color: #999; letter-spacing: 1px; margin-top: 10px; text-transform: uppercase; }
-
-        @media (max-width: 768px) {
-            .logo { font-size: 26px; letter-spacing: 8px; }
-            .hero h1 { font-size: 30px; }
-            .card img { height: 320px; }
-            nav { gap: 15px; }
-            nav a { font-size: 9px; }
+        /* --- Hero Section --- */
+        .hero { 
+            padding: 140px 20px; 
+            text-align: center; 
+            background: radial-gradient(circle, #fff 0%, #fcfaf5 100%);
+            border-bottom: 1px solid #eee;
         }
-    </style>
-</head>
-<body>
+        .hero h1 { 
+            font-family: 'Playfair Display SC', serif;
+            font-size: 48px; 
+            letter-spacing: 6px; 
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+        .hero p { font-size: 18px; color: #666; font-style: italic; max-width: 650px; margin: 0 auto; letter-spacing: 1px; }
 
-<header>
-    <a href="#" class="logo">ETRAAM</a>
-    <p class="tagline">Heritage | Luxury | Art</p>
-    <nav>
-        <a href="#unisex">Unisex</a>
-        <a href="#luxury">Darbaar Edition</a>
-        <a href="#about">Our Story</a>
-    </nav>
-</header>
+        /* --- Product Grid --- */
+        .section-header { text-align: center; padding: 120px 20px 50px; }
+        .section-header h2 { 
+            font-family: 'Cinzel', serif;
+            font-size: 34px; 
+            letter-spacing: 12px; 
+            text-transform: uppercase;
+            color: var(--gold);
+        }
 
-<section class="hero">
-    <h1>Essential Luxury</h1>
-    <p>Crafted in Kanpur. Curated for the Connoisseur. Experience the essence of Etraam.</p>
-</section>
-
-<div class="section-header" id="unisex">
-    <h2>Unisex Collection</h2>
-</div>
-
-<div class="container">
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1594035910387-fea47734265f?auto=format&fit=crop&w=500" alt="Noor-e-Ishq">
-        <h3>Noor-e-Ishq</h3>
-        <p class="desc">A divine light of musk and floral heritage.</p>
-        <span class="price">₹2,499</span>
-        <a href="https://wa.me/917054157666?text=Hello%20Etraam,%20I%20want%20to%20order%20Noor-e-Ishq" target="_blank" class="order-link">Order on WhatsApp</a>
-    </div>
-
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=500" alt="Classical">
-        <h3>Etraam Classical</h3>
-        <p class="desc">The timeless essence of traditional notes.</p>
-        <span class="price">₹2,199</span>
-        <a href="https://wa.me/917054157666?text=Hello%20Etraam,%20I%20want%20to%20order%20Etraam%20Classical" target="_blank" class="order-link">Order on WhatsApp</a>
-    </div>
-
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=500" alt="Mehfooza">
-        <h3>Mehfooza-e-Ishq</h3>
-        <p class="desc">Encapsulating the warmth of deep love.</p>
-        <span class="price">₹2,799</span>
-        <a href="https://wa.me/917054157666?text=Hello%20Etraam,%20I%20want%20to%20order%20Mehfooza-e-Ishq" target="_blank" class="order-link">Order on WhatsApp</a>
-    </div>
-
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=500" alt="Original">
-        <h3>Etraam Original</h3>
-        <p class="desc">The signature fragrance that defined Etraam.</p>
-        <span class="price">₹1,999</span>
-        <a href="https://wa.me/917054157666?text=Hello%20Etraam,%20I%20want%20to%20order%20Etraam%20Original" target="_blank" class="order-link">Order on WhatsApp</a>
-    </div>
-</div>
-
-<div class="section-header" id="luxury">
-    <h2>Luxury Edition</h2>
-</div>
-
-<div class="container">
-    <div class="card luxury-card">
-        <div class="luxury-label">The Royal Edition</div>
-        <img src="https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=500" alt="Darbaar">
-        <h3>Etraam Darbaar</h3>
-        <p class="desc">Rich Oud & Royal Amber. Experience the majesty.</p>
-        <span class="price">₹4,999</span>
-        <a href="https://wa.me/917054157666?text=Hello%20Etraam,%20I%20want%20to%20request%20access%20to%20Etraam%20Darbaar" target="_blank" class="order-link" style="background:var(--gold)">Request Access</a>
-    </div>
-</div>
-
-<footer id="about">
-    <div class="footer-logo">ETRAAM LUXURY</div>
-    <p class="location-info">Naveen Market, Kanpur | Shuklaganj | Unnao</p>
-    <div>
-        <span class="curated-by">Curated by Swastik Sharma</span>
-    </div>
-    <p style="margin-top: 40px; font-size: 10px; opacity: 0.3; letter-spacing: 2px;">&copy; 2026 ETRAAM. ALL RIGHTS RESERVED.</p>
-</footer>
-
-</body>
-</html> 
-            
+        .container { 
+            max-width: 1300px; 
+            margin: auto; 
+            padding: 0 20px 100px; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 50px; 
+        }
         
-
+        .card { 
+            background: var(--white); 
+            padding: 40px; 
+            text-align: center; 
+            border: 1px solid #f0f0f0;
+            transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+        }
         
-        
+        .card:hover { 
+            transform: translateY(-20px); 
+            box-shadow
